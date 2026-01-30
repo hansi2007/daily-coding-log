@@ -1,2 +1,35 @@
 # daily-coding-log
-My daily coding practice
+class Solution {
+    public boolean isPalindrome(int x) {
+        if(x<0){
+            return false;
+        }
+        int rev=0;
+        int num=x;
+
+        while(num!=0){
+            rev=rev*10 + num%10;
+            num=num/10;
+        }
+
+        return (rev==x);
+        
+    }
+}
+
+
+class Solution {
+    public void reverseString(char[] s) {
+        int l=0;
+        int r=s.length-1;
+        while(l<r){
+            char temp=s[l];
+            s[l]=s[r];
+            s[r]=temp;
+
+            l++;
+            r--;
+        }
+        
+    }
+}
