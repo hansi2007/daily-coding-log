@@ -33,3 +33,15 @@ class Solution {
         
     }
 }
+
+
+
+print('hello world')
+
+
+int a
+if (a%2==0)
+print('even')
+else 
+print ('false')
+
