@@ -40,8 +40,14 @@ print('hello world')
 
 
 int a
-if (a%2==0)
+if (a%2==0):
 print('even')
-else 
+else: 
 print ('false')
+
+a = 5
+b = 3
+sum = a + b
+print("Sum:", sum)
+
 
