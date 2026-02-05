@@ -51,3 +51,11 @@ sum = a + b
 print("Sum:", sum)
 
 
+arithmetic operator in python hacker rank :-
+if __name__ == '__main__':
+    a = int(input())
+    b = int(input())
+    
+    print(a+b)
+    print(a-b)
+    print(a*b)
