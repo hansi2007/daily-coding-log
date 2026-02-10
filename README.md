@@ -82,3 +82,79 @@ elif choice == 4:
 else:
     print("Invalid choice")
 
+
+
+import pandas as pd
+
+employees=pd.DataFrame({
+    'employees_id':[501,502,503,504],
+    'name':['A','B','C','D'],
+    'department_id':[1,2,3,4]
+    })
+
+employees.to_excel('employees.xlsx', index=False)
+
+
+
+
+salaries=pd.DataFrame({
+    'employees_id':[501,502,503,504],
+    'salaries':[5000,6000,7000,8000]
+})
+
+salaries.to_csv('salaries.csv',index=False)
+
+
+
+employees.shape
+
+employees.columns
+
+employees.isnull().sum()
+
+salaries.columns
+
+employees.tail()
+
+employees.info()
+
+salaries.describe()
+
+import pandas as pd
+import json
+
+departments = [
+    {"department_id": 1, "department_name": "HR"},
+    {"department_id": 2, "department_name": "Finance"},
+    {"department_id": 3, "department_name": "IT"}
+]
+
+with open('departments.json', 'w') as f:
+    json.dump(departments, f)
+
+print("department.json created successfully.")
+
+
+dept_df=pd.read_json('departments.json')
+
+print(dept_df)
+
+print(set(employees['employees_id']).intersection(set(salaries['employees_id'])))
+print("common employe ID's  bw employees & salaries")
+
+merged_df=pd.merge(employees,salaries,on='employees_id', how='inner')
+print("after  merging employees & salaries")
+print(merged_df)
+
+final_df=pd.merge(merged_df,dept_df,on='department_id',how='inner')
+
+print('final merged dataframe')
+print(final_df)
+
+final_df.to_csv('final_df.csv',index=False)
+
+print('final_df.csv created successfully')
+
+
+
+
