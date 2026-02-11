@@ -156,5 +156,64 @@ final_df.to_csv('final_df.csv',index=False)
 print('final_df.csv created successfully')
 
 
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.datasets import load_iris
+
+#need to load datasets
+
+iris = load_iris()
+df= pd.DataFrame(iris.data, columns=iris.feature_names)
+
+df.shape
+
+df['species']=iris.target
+
+Index(['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)',
+       'petal width (cm)', 'species'],
+      dtype='object')
+
+
+# descriptive statistics we r going to do here
+
+print("mean :",df.mean(numeric_only=True))
+
+
+
+print("median :" , df.median(numeric_only=True))
+
+print("dt_deviation :", df.std(numeric_only=True))
+
+print("kurtosis :" , df.kurtosis(numeric_only=True))
+
+print("skewness :", df.skew(numeric_only=True))
+
+# boxplot :
+
+plt.figure(figsize=(8,5))
+df.drop('species', axis =1).boxplot()
+plt.title("boxplot of iris features")
+plt.show()
+
+#histogram for saple length
+
+plt.figure(figsize=(6,4))
+plt.hist(df['sepal length (cm)'], bins=10)
+plt.title("histogram of sepal length")
+plt.xlabel("sepal length")
+plt.ylabel("frequency")
+plt.show()
+
+plt.figure(figsize=(6,4))
+plt.hist(df['petal width (cm)'], bins=10)
+plt.title("histogram of petal width")
+plt.xlabel("petal width")
+plt.ylabel("frequency")
+plt.show()
+
+
+
+
 
 
