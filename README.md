@@ -214,6 +214,60 @@ plt.show()
 
 
 
+#Import required libraries
+#SEMMA - Sample/Access, Explore, Modify, Model, Assessment
+#Data management libraries (Sample, Modify)
+import pandas as pd
+import numpy as np
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.model_selection import train_test_split
 
+
+
+#Visualization
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+#Modeling
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.svm import LinearSVC
+
+#Assessment/Evaluation
+from sklearn.metrics import classification_report, confusion_matrix
+
+#Accessing/sampling the data
+# Replace 'spam_dataset.csv' with the path to your actual file
+file_path = 'C:/Users/hansi/Downloads/4th sem minor project/spam.csv'
+
+# Read the CSV file
+df = pd.read_csv(file_path, encoding='latin-1')
+
+
+#Explore
+df.sample(10)
+
+#Modify the data
+df.columns
+
+df = df[['Label', 'tmessage']]
+
+
+df1.sample()
+
+# Tokenize using lambda function (splitting by whitespace)
+df['Tokens'] = df['Message'].apply(lambda x: x.split())
+
+# Target variable
+y = df['Label']
+
+# Initialize CountVectorizer
+vectorizer = CountVectorizer()
+
+# Feature matrix from 'Message' column
+X = vectorizer.fit_transform(df['Message'])
+
+# Show shape of feature matrix
+print(f"Feature matrix shape: {X.shape}")
+print(f"Target variable shape: {y.shape}")
 
 
