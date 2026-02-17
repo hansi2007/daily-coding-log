@@ -274,3 +274,22 @@ print(f"Target variable shape: {y.shape}")
 print("hello world")
 
 print ("hello world")
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# scatter plot
+plt.figure(figsize=(6,4))
+plt.scatter(df['sepal width (cm)'], df['petal width (cm)'])
+plt.xlabel("sepal width (cm)")
+plt.ylabel('petal width (cm)')
+plt.title('scatter plot : sepal width vs petal width')
+plt.show()
+
+
+#heatmap for correlation : it means correlation of feature
+plt.figure(figsize=(7,5))
+correlation = df.drop('species', axis =1).corr()
+sns.heatmap(correlation, annot=True, cmap='coolwarm')
+plt.title('heatmap of feature correlation')
+plt.show()
