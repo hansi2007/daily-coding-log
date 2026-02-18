@@ -293,3 +293,5 @@ correlation = df.drop('species', axis =1).corr()
 sns.heatmap(correlation, annot=True, cmap='coolwarm')
 plt.title('heatmap of feature correlation')
 plt.show()
+
+print(" u can fo this ")
